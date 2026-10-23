@@ -1,0 +1,134 @@
+/* ==========================================================
+   Red HB — estilos
+   Paleta monocroma: negro del monograma + blanco hueso
+   ========================================================== */
+:root {
+  --bg: #0e0e0e;
+  --bg-raise: rgba(255, 255, 255, .03);
+  --ink: #f2f0eb;
+  --ink-soft: #a9a7a1;
+  --ink-mute: #6c6b67;
+  --line: #2a2a29;
+  --line-strong: #555552;
+
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+/* Red de fondo */
+.net {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ---------- Portada ---------- */
+.home {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(56px, 10vh, 96px);
+  padding: 64px 16px 96px;
+}
+
+.mark { margin: 0; width: 140px; }
+.mark img { width: 100%; animation: rise 1.4s var(--ease) both .1s; }
+
+/* ---------- Botones ---------- */
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 20px;
+  animation: rise 1.4s var(--ease) both .35s;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  padding: 24px 20px;
+  border: 1px solid var(--line);
+  background: rgba(14, 14, 14, .6);
+  transition: border-color .4s var(--ease), background .4s var(--ease), transform .4s var(--ease);
+}
+.link.is-soon { opacity: .45; }
+a.link:hover,
+a.link:focus-visible {
+  border-color: var(--line-strong);
+  background: var(--bg-raise);
+  transform: translateY(-3px);
+}
+
+.link-logo {
+  display: grid;
+  place-items: center;
+  height: 100px;
+  width: 100%;
+}
+.logo-topo { width: 180px; }
+.logo-beer { width: 96px; }
+.logo-gym { width: 110px; }
+.logo-gym path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.4;
+  stroke-linecap: square;
+}
+
+
+/* ---------- Coordenadas ---------- */
+.coords {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  margin: 0;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--ink-mute);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark img, .links { animation: none; }
+  .link { transition: none; }
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 760px) {
+  .links { grid-template-columns: minmax(0, 320px); gap: 14px; }
+  .link { height: 130px; }
+}
+
+@media (max-width: 560px) {
+  .mark { width: 96px; }
+  .coords { position: static; padding-bottom: 28px; margin-top: -56px; }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red HB</title>
+  <meta name="description" content="Red HB: topografía, cerveza artesanal y entrenamiento.">
+  <meta name="theme-color" content="#0e0e0e">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redhb.com/">
+  <meta property="og:title" content="Red HB">
+  <meta property="og:description" content="Topografía, cerveza artesanal y entrenamiento.">
+  <meta property="og:image" content="https://redhb.com/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <canvas class="net" aria-hidden="true"></canvas>
+
+  <main class="home">
+    <h1 class="mark">
+      <img src="assets/img/h-460.webp"
+           srcset="assets/img/h-230.webp 230w, assets/img/h-460.webp 460w, assets/img/h-690.webp 690w, assets/img/h-920.webp 920w"
+           sizes="(max-width: 560px) 96px, 140px"
+           alt="Red HB" width="140" height="205">
+    </h1>
+
+    <nav class="links" aria-label="Temas">
+      <a class="link" href="https://gnss.redhb.com" aria-label="Topografía">
+        <span class="link-logo">
+          <img class="logo-topo" src="assets/img/topografia.webp" alt="" width="1100" height="512">
+        </span>
+      </a>
+
+      <!-- Sin app todavía: cuando exista, cambia <div> por <a href="https://..."> -->
+      <div class="link is-soon" aria-label="Cerveza (próximamente)">
+        <span class="link-logo">
+          <img class="logo-beer" src="assets/img/la-h-cerveza-300.webp"
+               srcset="assets/img/la-h-cerveza-150.webp 150w, assets/img/la-h-cerveza-300.webp 300w, assets/img/la-h-cerveza-450.webp 450w"
+               sizes="96px" alt="" width="96" height="100">
+        </span>
+      </div>
+
+      <a class="link" href="https://entreno.redhb.com/" aria-label="Entrenamiento">
+        <span class="link-logo">
+          <svg class="logo-gym" viewBox="0 0 120 60" aria-hidden="true">
+            <path d="M6 30h108M18 18v24M28 12v36M92 12v36M102 18v24"/>
+          </svg>
+        </span>
+      </a>
+    </nav>
+  </main>
+
+  <p class="coords" aria-hidden="true">4° N · 75° W</p>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
